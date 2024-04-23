@@ -8,14 +8,14 @@ npm install --save ka-to-lat
 
 ## Usage
 ```javascript
-const kaToLat = require('ka-to-lat');
+import { georgianToLatin } from "ka-to-lat";
 
-console.log(kaToLat('გამარჯობა ლათინურად')); // gamarjoba latinurad
+console.log(georgianToLatin('გამარჯობა ლათინურად')); // gamarjoba latinurad
 ```
 
 ## Types
 ```typescript
-function kaToLat(text: string): string;
+function georgianToLatin(text: string): string;
 ```
 
 ## License
