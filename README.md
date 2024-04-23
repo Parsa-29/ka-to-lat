@@ -14,10 +14,10 @@ npm install --save ka-to-lat
 import { georgianToLatin, latinToGeorgian } from "ka-to-lat";
 
 // Convert Georgian text to Latin text
-georgianToLatin("ლორემ იმპსუმ"); // Lorem ipsum
+georgianToLatin("ლორემ იპსუმ"); // Lorem ipsum
 
 // Convert
-latinToGeorgian("Lorem ipsum"); // ლორემ იმპსუმ
+latinToGeorgian("Lorem ipsum"); // ლორემ იპსუმ
 ```
 
 ## Types
