@@ -1,0 +1,37 @@
+{
+  "name": "ka-to-lat",
+  "description": "Convert Georgian letters to Latin",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/Parsa-29/ka-to-lat/",
+  "repository": {
+    "url": "https://github.com/Parsa-29/ka-to-lat/"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "georgian",
+    "latin",
+    "ka-to-lat",
+    "ka-to-en",
+    "georgian-to-latin",
+    "georgian-to-latin-converter",
+    "georgian-to-latin-convertor",
+    "georgian-to-latin-translator",
+    "georgian-to-latin-translation",
+    "georgian-to-en",
+    "georgian-to-en-converter",
+    "georgian-to-en-convertor",
+    "georgian-to-en-translator",
+    "georgian-to-en-translation"
+  ],
+  "author": "Parsa-29",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}
