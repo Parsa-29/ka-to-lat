@@ -14,7 +14,7 @@ const georgianToLatinMap: { [key: string]: string | string[] } = {
   ნ: "n",
   ო: "o",
   პ: "p",
-  ჟ: "j",
+  ჟ: "zh",
   რ: "r",
   ს: "s",
   ტ: "t",
@@ -54,10 +54,11 @@ export const georgianToLatin = (georgianText: string) => {
   return latinText.charAt(0).toUpperCase() + latinText.slice(1);
 };
 
-
 // Function to convert Latin text to Georgian text
 export const latinToGeorgian = (latinText: string) => {
+  latinText = latinText.toLowerCase(); // Convert the input to lowercase
   let georgianText = "";
+
   for (let i = 0; i < latinText.length; i++) {
     let char = latinText[i];
     // Check for special cases of two Latin characters mapping to one Georgian character
@@ -85,16 +86,20 @@ export const latinToGeorgian = (latinText: string) => {
       georgianText += "ჩ";
       i++;
       continue;
+    } else if (char === "z" && latinText[i + 1] === "h") {
+      georgianText += "ჟ";
+      i++;
+      continue;
     } else {
       // Find the Georgian character corresponding to the Latin character
-      let georgianChar = Object.keys(georgianToLatinMap).find(
-        (key) => {
-          const latinEquivalent = georgianToLatinMap[key];
-          return Array.isArray(latinEquivalent) ? latinEquivalent.includes(char) : latinEquivalent === char;
-        }
-      );
+      let georgianChar = Object.keys(georgianToLatinMap).find((key) => {
+        const latinEquivalent = georgianToLatinMap[key];
+        return Array.isArray(latinEquivalent)
+          ? latinEquivalent.includes(char)
+          : latinEquivalent === char;
+      });
       georgianText += georgianChar ? georgianChar : char;
     }
   }
   return georgianText; // Return the converted Georgian text
-}
+};

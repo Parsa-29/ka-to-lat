@@ -16,7 +16,7 @@ import { georgianToLatin, latinToGeorgian } from "ka-to-lat";
 // Convert Georgian text to Latin text
 georgianToLatin("ლორემ იპსუმ"); // Lorem ipsum
 
-// Convert
+// Convert Latin text to Georgian text
 latinToGeorgian("Lorem ipsum"); // ლორემ იპსუმ
 ```
 
