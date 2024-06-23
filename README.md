@@ -24,7 +24,18 @@ latinToGeorgian("Lorem ipsum"); // ლორემ იპსუმ
 
 ```typescript
 function georgianToLatin(text: string): string;
+
 function latinToGeorgian(text: string): string;
+```
+
+## Special Cases
+
+On the `latinToGeorgian` function, if special cases are uppercase, they do not convert correctly. For example:
+
+```javascript
+latinToGeorgian("gverdze"); // გვერძე - WRONG
+
+latinToGeorgian("gverDZe"); // გვერდზე - CORRECT
 ```
 
 ## License

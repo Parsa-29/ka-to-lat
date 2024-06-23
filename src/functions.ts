@@ -56,7 +56,6 @@ export const georgianToLatin = (georgianText: string) => {
 
 // Function to convert Latin text to Georgian text
 export const latinToGeorgian = (latinText: string) => {
-  latinText = latinText.toLowerCase(); // Convert the input to lowercase
   let georgianText = "";
 
   for (let i = 0; i < latinText.length; i++) {
@@ -66,32 +65,63 @@ export const latinToGeorgian = (latinText: string) => {
       georgianText += "ღ";
       i++;
       continue;
-    } else if (char === "k" && latinText[i + 1] === "h") {
+    } else if (
+      char === "k" &&
+      latinText[i + 1] === "h" &&
+      char.toLowerCase() &&
+      latinText[i + 1].toLowerCase()
+    ) {
       georgianText += "ხ";
       i++;
       continue;
-    } else if (char === "t" && latinText[i + 1] === "s") {
+    } else if (
+      char === "t" &&
+      latinText[i + 1] === "s" &&
+      char.toLowerCase() &&
+      latinText[i + 1].toLowerCase()
+    ) {
       georgianText += "წ";
       i++;
       continue;
-    } else if (char === "d" && latinText[i + 1] === "z") {
+    } else if (
+      char === "d" &&
+      latinText[i + 1] === "z" &&
+      char.toLowerCase() &&
+      latinText[i + 1].toLowerCase()
+    ) {
       georgianText += "ძ";
       i++;
       continue;
-    } else if (char === "s" && latinText[i + 1] === "h") {
+    } else if (
+      char === "s" &&
+      latinText[i + 1] === "h" &&
+      char.toLowerCase() &&
+      latinText[i + 1].toLowerCase()
+    ) {
       georgianText += "შ";
       i++;
       continue;
-    } else if (char === "c" && latinText[i + 1] === "h") {
+    } else if (
+      char === "c" &&
+      latinText[i + 1] === "h" &&
+      char.toLowerCase() &&
+      latinText[i + 1].toLowerCase()
+    ) {
       georgianText += "ჩ";
       i++;
       continue;
-    } else if (char === "z" && latinText[i + 1] === "h") {
+    } else if (
+      char === "z" &&
+      latinText[i + 1] === "h" &&
+      char.toLowerCase() &&
+      latinText[i + 1].toLowerCase()
+    ) {
       georgianText += "ჟ";
       i++;
       continue;
     } else {
       // Find the Georgian character corresponding to the Latin character
+      char = char.toLowerCase(); // Convert to lowercase for case-insensitive comparison
       let georgianChar = Object.keys(georgianToLatinMap).find((key) => {
         const latinEquivalent = georgianToLatinMap[key];
         return Array.isArray(latinEquivalent)
