@@ -38,6 +38,20 @@ latinToGeorgian("gverdze"); // გვერძე - WRONG
 latinToGeorgian("gverDZe"); // გვერდზე - CORRECT
 ```
 
+## Custom String Method
+
+The package also extends the `String` prototype with a methods called `latinToGeorgian()` and `georgianToLatin()`. This method allows you to modify the original string in a specific way. For example: 
+
+```js
+import "ka-to-lat"
+
+const result1 = 'Gamarjoba!'.latinToGeorgian(); 
+console.log(result1); // Output: "გამარჯობა!"
+
+const result2 = 'მოგესალმები!'.georgianToLatin(); 
+console.log(result2); // Output: "Mogesalmebi!"
+```
+
 ## License
 
 MIT
