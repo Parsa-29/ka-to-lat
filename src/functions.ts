@@ -1,3 +1,10 @@
+declare global {
+  interface String {
+    latinToGeorgian(this: string): string;
+    georgianToLatin(this: string): string;
+  }
+}
+
 const georgianToLatinMap: { [key: string]: string | string[] } = {
   ა: "a",
   ბ: "b",
@@ -132,4 +139,12 @@ export const latinToGeorgian = (latinText: string) => {
     }
   }
   return georgianText; // Return the converted Georgian text
+};
+
+String.prototype.latinToGeorgian = function () {
+  return latinToGeorgian(this);
+};
+
+String.prototype.georgianToLatin = function () {
+  return georgianToLatin(this);
 };
